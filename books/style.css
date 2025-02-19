@@ -1,0 +1,21 @@
+body {
+    background-color: #002b36; /* Dark greenish */
+    color: #b3b35c; /* Muted yellow */
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+button {
+    background: #004400;
+    color: #fff;
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background: #006600;
+}
+#bookList {
+    margin-top: 20px;
+}
+

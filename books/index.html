@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Recommendations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>📚 Book Recommendations</h1>
+
+    <div id="tabs">
+        <button onclick="fetchBooks()">All Books</button>
+        <button onclick="fetchBooks('Bronze Age Pervert')">BAP</button>
+        <button onclick="fetchBooks('Marc Andreessen')">Marc Andreessen</button>
+        <button onclick="fetchBooks('Michael Malice')">Michael Malice</button>
+        <label>
+            <input type="checkbox" id="uniqueToggle"> Show Unique
+        </label>
+    </div>
+
+    <div id="bookList"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
