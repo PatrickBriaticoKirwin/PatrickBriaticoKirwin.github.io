@@ -19,13 +19,9 @@ async function fetchBooks(recommender = "") {
 }
 
 function displayBooks(books) {
-	const bookList = document.getElementById("bookList");
-	bookList.innerHTML = "";
 
-	if (books.length === 0) {
-		bookList.innerHTML = "<p>No books found.</p>";
-		return;
-	}
+	const tableBody = document.querySelector("#bookTable tbody");
+        tableBody.innerHTML = ""; // Clear existing content
 
 	books.forEach(book => {
 		const row = document.createElement("tr");
