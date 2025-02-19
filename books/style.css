@@ -1,21 +1,34 @@
 body {
-    background-color: #002b36; /* Dark greenish */
-    color: #b3b35c; /* Muted yellow */
     font-family: Arial, sans-serif;
+    background-color: #0a2914;
+    color: #d4c77e;
+    margin: 20px;
     text-align: center;
 }
-button {
-    background: #004400;
-    color: #fff;
-    padding: 10px;
-    margin: 5px;
-    border: none;
-    cursor: pointer;
+
+h1 {
+    color: #f4e87c;
 }
-button:hover {
-    background: #006600;
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #18321d;
+    color: #e0e0e0;
 }
-#bookList {
-    margin-top: 20px;
+
+th, td {
+    padding: 12px;
+    border: 1px solid #f4e87c;
+    text-align: left;
+}
+
+th {
+    background-color: #265533;
+}
+
+tr:hover {
+    background-color: #356e45;
 }
 
