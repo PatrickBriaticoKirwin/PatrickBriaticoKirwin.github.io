@@ -29,7 +29,7 @@ function displayBooks(books) {
 		<td>${book.title || 'Unknown'}</td>
 		<td>${book.author || 'Unknown'}</td>
 		<td>${book.genre || 'N/A'}</td>
-		<td>${book.recommenders ? book.recommenders.join(", ") : 'None'}</td>
+		<td>${book.recommender ? book.recommender : 'None'}</td>
 	    `;
 		tableBody.appendChild(row); 
 	});
