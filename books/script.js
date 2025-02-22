@@ -22,8 +22,8 @@ function displayBooks(books) {
 
 	const tableBody = document.querySelector("#bookTable tbody");
         tableBody.innerHTML = ""; // Clear existing content
-
-	books.forEach(book => {
+	const bookArr = Array.from(books);
+	bookArr.forEach(book => {
 		const row = document.createElement("tr");
 		row.innerHTML = `
 		<td>${book.title || 'Unknown'}</td>
