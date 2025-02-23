@@ -47,7 +47,7 @@ async function submitGoodreadsUrl() {
 		message.textContent = 'Please enter a URL.';
 		return;
 	}
-	if (!recName) {
+	if (!name) {
 		message.textContent = 'Please enter a recommender name.';
 		return;
 	}
