@@ -21,7 +21,7 @@ async function fetchBooks(recommender = "") {
 function displayBooks(books) {
 
 	const tableBody = document.querySelector("#bookTable tbody");
-        tableBody.innerHTML = ""; // Clear existing content
+	tableBody.innerHTML = ""; // Clear existing content
 	const bookArr = Array.from(books);
 	bookArr.forEach(book => {
 		const row = document.createElement("tr");
@@ -33,6 +33,30 @@ function displayBooks(books) {
 	    `;
 		tableBody.appendChild(row); 
 	});
+}
+
+async function submitGoodreadsUrl() {
+	let url = document.getElementById('goodreadsUrl').value;
+	let message = document.getElementById('formMessage');
+
+	if (!url) {
+		message.textContent = 'Please enter a URL.';
+		return;
+	}
+
+	try {
+		let response = await fetch('https://bookrecs.onrender.com/submit-goodreads', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify({ url })
+		});
+
+		let result = await response.json();
+		message.textContent = result.message;
+	} catch (error) {
+		console.error('Error submitting URL:', error);
+		message.textContent = 'Failed to submit URL.';
+	}
 }
 
 // Fetch all books on load
