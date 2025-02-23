@@ -1,4 +1,7 @@
-const API_BASE = "https://bookrecs.onrender.com";
+
+const API_BASE = window.location.hostname === "localhost" 
+    ? "http://localhost:8080"  // Local backend URL
+    : "https://bookrecs.onrender.com";  // Render backend URL
 
 async function fetchBooks(recommender = "") {
 	const unique = document.getElementById("uniqueToggle").checked;
@@ -37,18 +40,23 @@ function displayBooks(books) {
 
 async function submitGoodreadsUrl() {
 	let url = document.getElementById('goodreadsUrl').value;
+	let name = document.getElementById('recommenderName').value;
 	let message = document.getElementById('formMessage');
 
 	if (!url) {
 		message.textContent = 'Please enter a URL.';
 		return;
 	}
+	if (!recName) {
+		message.textContent = 'Please enter a recommender name.';
+		return;
+	}
 
 	try {
-		let response = await fetch('https://bookrecs.onrender.com/submit-goodreads', {
+		let response = await fetch(`${API_BASE}/submit-goodreads`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
-			body: JSON.stringify({ url })
+			body: JSON.stringify({ url, name })
 		});
 
 		let result = await response.json();
