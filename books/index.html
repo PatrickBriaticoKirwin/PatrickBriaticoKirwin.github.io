@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Recommendations</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <h1>📚 Book Recommendations</h1>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Book Recommendations</title>
+		<link rel="stylesheet" href="style.css">
+	</head>
+	<body>
+		<h1>📚 Book Recommendations</h1>
 
-    <div id="tabs">
-        <button onclick="fetchBooks()">All Books</button>
-        <button onclick="fetchBooks('Bronze Age Pervert')">BAP</button>
-        <button onclick="fetchBooks('Marc Andreessen')">Marc Andreessen</button>
-        <button onclick="fetchBooks('Michael Malice')">Michael Malice</button>
-        <label>
-            <input type="checkbox" id="uniqueToggle"> Show Unique
-        </label>
-    </div>
-    <table id="bookTable">
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Author</th>
-                <th>Genre</th>
-                <th>Recommenders</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Books will be inserted here -->
-        </tbody>
-    </table>
-    
+		<div id="tabs">
+			<button onclick="fetchBooks()">All Books</button>
+			<button onclick="fetchBooks('Bronze Age Pervert')">BAP</button>
+			<button onclick="fetchBooks('Marc Andreessen')">Marc Andreessen</button>
+			<button onclick="fetchBooks('Michael Malice')">Michael Malice</button>
+			<label>
+				<input type="checkbox" id="uniqueToggle"> Show Unique
+			</label>
+		</div>
 
-    <script src="script.js"></script>
-</body>
+		<div class="container">
+			<div class="table-container">
+				<table id="bookTable">
+					<thead>
+						<tr>
+							<th>Title</th>
+							<th>Author</th>
+							<th>Genre</th>
+							<th>Recommender(s)</th>
+						</tr>
+					</thead>
+					<tbody>
+						<!-- Books will be inserted here -->
+					</tbody>
+				</table>
+			</div>
+			<div class="form-container">
+				<h3>Submit a Rec List</h3>
+				<input type="text" id="recommenderName" placeholder="Enter Recommender Name">
+				<br>
+				<input type="text" id="goodreadsUrl" placeholder="Enter Goodreads list URL">
+				<br>
+				<button onclick="submitGoodreadsUrl()">Submit</button>
+				<p id="formMessage"></p>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
 </html>
 
