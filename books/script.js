@@ -53,7 +53,7 @@ async function submitGoodreadsUrl() {
 	}
 
 	try {
-		let response = await fetch(`${API_BASE}/submit-goodreads`, {
+		let response = await fetch(`${API_BASE}/import-request`, {
 			method: 'POST',
 			headers: { 'Content-Type': 'application/json' },
 			body: JSON.stringify({ url, name })
